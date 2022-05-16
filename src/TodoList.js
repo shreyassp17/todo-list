@@ -1,13 +1,19 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos }, { onStatusChangeHandler }) => {
   return (
-    <ul>
+    <div>
       {todos.map((todo, index) => {
-        return <Todo todo={todo} key={index} />;
+        return (
+          <Todo
+            todo={todo}
+            key={index}
+            onStatusChangeHandler={onStatusChangeHandler}
+          />
+        );
       })}
-    </ul>
+    </div>
   );
 };
 

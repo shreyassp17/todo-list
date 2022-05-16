@@ -1,9 +1,16 @@
 import React from "react";
 
-export default function Todo({ todo }, { index }) {
+export default function Todo({ todo }, { onStatusChangeHandler }) {
   return (
     <div>
-      <li>{todo.name}</li>
+      <label>
+        <input
+          type="checkbox"
+          onChange={onStatusChangeHandler}
+          defaultChecked={todo.completed}
+        />
+        {todo.name}
+      </label>
     </div>
   );
 }

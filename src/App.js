@@ -8,7 +8,13 @@ const App = () => {
   const handleAddTodo = (e) => {
     e.preventDefault();
     setTodos([...todos, todo]);
+    // console.log(todo);
     setTodo({ ...todo, name: "" });
+  };
+
+  const onStatusChangeHandler = (e) => {
+    e.preventDefault();
+    setTodo({ ...todo, completed: false });
   };
 
   return (
@@ -16,12 +22,13 @@ const App = () => {
       <input
         type="text"
         onChange={(e) => {
-          setTodo({ name: e.target.value });
+          setTodo({ ...todo, name: e.target.value });
         }}
         value={todo.name}
       />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <TodoList todos={todos} />
+      <button>Clear Complete</button>
+      <TodoList todos={todos} onStatusChangeHandler={onStatusChangeHandler} />
     </div>
   );
 };
