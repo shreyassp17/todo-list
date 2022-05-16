@@ -5,16 +5,19 @@ const App = () => {
   const [todo, setTodo] = useState({ name: "", completed: false });
   const [todos, setTodos] = useState([]);
 
+  // console.log(todos);
+
   const handleAddTodo = (e) => {
     e.preventDefault();
     setTodos([...todos, todo]);
-    // console.log(todo);
     setTodo({ ...todo, name: "" });
   };
 
-  const onStatusChangeHandler = (e) => {
-    e.preventDefault();
-    setTodo({ ...todo, completed: false });
+  const onStatusChangeHandler = (name) => {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.name === name);
+    todo.completed = !todo.completed;
+    setTodos(newTodos);
   };
 
   return (
