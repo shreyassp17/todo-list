@@ -8,7 +8,7 @@ const App = () => {
   const handleAddTodo = (e) => {
     e.preventDefault();
     setTodos([...todos, todo]);
-    setTodo({...todo, name: ''});
+    setTodo({ ...todo, name: "" });
   };
 
   return (

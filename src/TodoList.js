@@ -1,10 +1,11 @@
 import React from "react";
+import Todo from "./Todo";
 
 const TodoList = ({ todos }) => {
   return (
     <ul>
       {todos.map((todo, index) => {
-        return <li key={index}>{todo.name}</li>;
+        return <Todo todo={todo} key={index} />;
       })}
     </ul>
   );
