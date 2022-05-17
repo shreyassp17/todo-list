@@ -20,7 +20,7 @@ const App = () => {
     setTodos(newTodos);
   };
 
-  const onClearCompletedHandler = () => {
+  const onClearCompleteHandler = () => {
     const newTodos = todos.filter((todo) => todo.completed === false);
     setTodos(newTodos);
   };
@@ -35,8 +35,9 @@ const App = () => {
         value={todo.name}
       />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={onClearCompletedHandler}>Clear Complete</button>
+      <button onClick={onClearCompleteHandler}>Clear Complete</button>
       <TodoList todos={todos} onStatusChangeHandler={onStatusChangeHandler} />
+      <div>{todos.filter(todo => !todo.completed).length} left to do</div>
     </div>
   );
 };
