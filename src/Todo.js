@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 
 export default function Todo({ todo, onStatusChangeHandler }) {
   const handleTodoClick = () => {
@@ -7,14 +8,13 @@ export default function Todo({ todo, onStatusChangeHandler }) {
 
   return (
     <div>
-      <label>
-        <input
-          type="checkbox"
-          onChange={handleTodoClick}
-          defaultChecked={todo.completed}
-        />
-        {todo.name}
-      </label>
+      <Form.Check
+        inline
+        aria-label="option 1"
+        label={todo.name}
+        onChange={handleTodoClick}
+        defaultChecked={todo.completed}
+      />
     </div>
   );
 }
