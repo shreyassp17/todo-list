@@ -8,7 +8,7 @@ const App = () => {
   const [todo, setTodo] = useState({ name: "", completed: false });
   const [todos, setTodos] = useState([]);
 
-  // console.log(todos);
+  console.log(todos);
 
   const handleAddTodo = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ const App = () => {
             setTodo({ ...todo, name: e.target.value });
           }}
           value={todo.name}
-        />
+        />     
         <Col xs="auto">
           <Button variant="primary" className="mb-2" onClick={handleAddTodo}>
             Add Todo

@@ -5,7 +5,7 @@ export default function Todo({ todo, onStatusChangeHandler }) {
   const handleTodoClick = () => {
     onStatusChangeHandler(todo.name);
   };
-
+  
   return (
     <div>
       <Form.Check
@@ -13,7 +13,7 @@ export default function Todo({ todo, onStatusChangeHandler }) {
         aria-label="option 1"
         label={todo.name}
         onChange={handleTodoClick}
-        defaultChecked={todo.completed}
+        checked = {todo.completed}
       />
     </div>
   );
